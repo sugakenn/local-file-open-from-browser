@@ -23,10 +23,13 @@ npm run makeで生成されるプロジェクトのoutフォルダの中にopenl
 GoogleChromeだと、AJAXを実行するページがhttpsでないと利用できないようです。
 
 open folder
+
 localhost:8080/folder?path=c:\
 
 open file
+
 localhost:8080/file?path=c:\sample.txt
 
 stop server
+
 localhost:8080/end
