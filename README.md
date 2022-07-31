@@ -15,9 +15,9 @@ JavaScriptとElectron環境で構築してあります。
 
 #### 使い方
 
-プロジェクトのoutフォルダの中にopenlocal-file-win32-x64フォルダがあります。
+npm run makeで生成されるプロジェクトのoutフォルダの中にopenlocal-file-win32-x64フォルダがあります。
 
-フォルダ事別の場所に移動してください。中のopenlocal-file.exeからバックグランドサーバーを起動します。
+フォルダごろ別の場所に移動してください。中のopenlocal-file.exeからバックグランドサーバーを起動します。
 
 起動したサーバーに対して次のようにAJAXすることでファイルやフォルダをオープンします。
 GoogleChromeだと、AJAXを実行するページがhttpsでないと利用できないようです。
