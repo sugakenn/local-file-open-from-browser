@@ -24,6 +24,7 @@ app.whenReady().then(function () {
       var objUrl = url.parse(req.url, true);
       var strFilePath = null;
       var strCmd = null;
+      var strMsg = "";
 
       // GETパラメータにファイルまたはフォルダのパスをセットする
       if (objUrl.query.path) {
@@ -45,6 +46,16 @@ app.whenReady().then(function () {
             execSync(strCmd);
           }
           break;
+        case "/check":
+          //存在確認
+          if (strFilePath) {
+            if (fs.existsSync(strFilePath)) {
+              strMsg = "1";
+            } else {
+              strMsg = "0";
+            }
+          }
+          break;
         case "/end":
           //アプリ終了
           console.log("server end");
@@ -53,6 +64,7 @@ app.whenReady().then(function () {
         default:
       }
       res.writeHead(200, { "Content-Type": "text/plain" });
+      res.write(strMsg);
       res.end();
     })
     .listen(8080, () => console.log("server start"));
